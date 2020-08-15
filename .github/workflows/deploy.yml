@@ -1,0 +1,35 @@
+name: Deploy
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 0 * * *'
+  push:
+    branches:
+      - 'master'
+env:
+  TF_ACCESS_TOKEN: ${{ secrets.TF_ACCESS_TOKEN }}
+  CLOUDFLARE_EMAIL: ${{ secrets.CLOUDFLARE_EMAIL }}
+  CLOUDFLARE_API_KEY: ${{ secrets.CLOUDFLARE_API_KEY }}
+  DIGITALOCEAN_ACCESS_TOKEN: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
+  DOCKER_HUB_USERNAME: ${{ secrets.DOCKER_HUB_USERNAME }}
+  DOCKER_HUB_ACCESS_TOKEN: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
+  NAMECHEAP_API_TOKEN: ${{ secrets.NAMECHEAP_API_TOKEN }}
+  AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+  AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+jobs:
+  deploy:
+    name: deploy
+    runs-on: ubuntu-latest
+    steps:
+      - uses: google/secrets-sync-action@v1.4.1
+        with:
+          secrets: |
+            ^TF_.*$
+            ^DOCKER_HUB_.*$
+            ^NAMECHEAP_.*$
+            ^CLOUDFLARE_.*$
+            ^DIGITALOCEAN_.*$
+            ^AWS_.*$
+          repositories: |
+            ^.*$
+          github_token: ${{ secrets.GH_TOKEN }}
