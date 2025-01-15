@@ -9,6 +9,7 @@ env:
   GH_TOKEN: ${{ secrets.GH_TOKEN }}
   NC_TOKEN: ${{ secrets.NC_TOKEN }}
   CF_TOKEN: ${{ secrets.CF_TOKEN }}
+  TF_TOKEN: ${{ secrets.TF_TOKEN }}
 jobs:
   deploy:
     name: deploy
@@ -21,6 +22,7 @@ jobs:
             ^GH_.*$
             ^NC_.*$
             ^CF_.*$
+            ^TF_.*$
           repositories: |
             ^.*BlakeRandall\/tf-.*$
             ^.*BlakeRandall\/dns.*$
