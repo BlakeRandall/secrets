@@ -10,6 +10,7 @@ env:
   NC_TOKEN: ${{ secrets.NC_TOKEN }}
   CF_TOKEN: ${{ secrets.CF_TOKEN }}
   TF_TOKEN: ${{ secrets.TF_TOKEN }}
+  DO_TOKEN: ${{ secrets.DO_TOKEN }}
 jobs:
   deploy:
     name: deploy
@@ -23,6 +24,7 @@ jobs:
             ^NC_.*$
             ^CF_.*$
             ^TF_.*$
+            ^DO_.*$
           repositories: |
             ^.*BlakeRandall\/tf-.*$
             ^.*BlakeRandall\/dns.*$
