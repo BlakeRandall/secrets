@@ -6,6 +6,7 @@ on:
       - 'master'
 env:
   EXAMPLE_SECRET: secret
+  GH_TOKEN: ${{ secrets.GH_TOKEN }}
 jobs:
   deploy:
     name: deploy
@@ -15,6 +16,7 @@ jobs:
         with:
           secrets: |
             ^EXAMPLE_.*$
+            ^GH_.*$
           repositories: |
             ^.*BlakeRandall\/tf-.*$
             ^.*BlakeRandall\/dns.*$
