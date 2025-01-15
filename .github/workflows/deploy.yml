@@ -12,20 +12,39 @@ env:
   TF_TOKEN: ${{ secrets.TF_TOKEN }}
   DO_TOKEN: ${{ secrets.DO_TOKEN }}
 jobs:
-  deploy:
+  deploy-actions:
     name: deploy
     runs-on: ubuntu-latest
     steps:
       - uses: google/secrets-sync-action@v1.10.0
         with:
+          target: actions
           secrets: |
-            ^EXAMPLE_.*$
             ^GH_.*$
             ^NC_.*$
             ^CF_.*$
             ^TF_.*$
             ^DO_.*$
           repositories: |
+            ^.*BlakeRandall\/secrets.*$
+            ^.*BlakeRandall\/tf-.*$
+            ^.*BlakeRandall\/dns.*$
+          github_token: ${{ secrets.GH_TOKEN }}
+  deploy-codespaces:
+    name: deploy
+    runs-on: ubuntu-latest
+    steps:
+      - uses: google/secrets-sync-action@v1.10.0
+        with:
+          target: codespaces
+          secrets: |
+            ^GH_.*$
+            ^NC_.*$
+            ^CF_.*$
+            ^TF_.*$
+            ^DO_.*$
+          repositories: |
+            ^.*BlakeRandall\/secrets.*$
             ^.*BlakeRandall\/tf-.*$
             ^.*BlakeRandall\/dns.*$
           github_token: ${{ secrets.GH_TOKEN }}
