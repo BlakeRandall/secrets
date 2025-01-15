@@ -8,6 +8,7 @@ env:
   EXAMPLE_SECRET: secret
   GH_TOKEN: ${{ secrets.GH_TOKEN }}
   NC_TOKEN: ${{ secrets.NC_TOKEN }}
+  CF_TOKEN: ${{ secrets.CF_TOKEN }}
 jobs:
   deploy:
     name: deploy
