@@ -7,6 +7,7 @@ on:
 env:
   EXAMPLE_SECRET: secret
   GH_TOKEN: ${{ secrets.GH_TOKEN }}
+  NC_TOKEN: ${{ secrets.NC_TOKEN }}
 jobs:
   deploy:
     name: deploy
