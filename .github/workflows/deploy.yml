@@ -16,5 +16,6 @@ jobs:
           secrets: |
             ^EXAMPLE_.*$
           repositories: |
-            ^.*$
+            ^blakerandall/tf-.*$
+            ^blakerandall/dns.*$
           github_token: ${{ secrets.GH_TOKEN }}
