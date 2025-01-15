@@ -16,7 +16,9 @@ jobs:
         with:
           secrets: |
             ^EXAMPLE_.*$
-            ^.*_TOKEN$
+            ^GH_.*$
+            ^NC_.*$
+            ^CF_.*$
           repositories: |
             ^.*BlakeRandall\/tf-.*$
             ^.*BlakeRandall\/dns.*$
