@@ -11,6 +11,8 @@ env:
   CF_TOKEN: ${{ secrets.CF_TOKEN }}
   TF_TOKEN: ${{ secrets.TF_TOKEN }}
   DO_TOKEN: ${{ secrets.DO_TOKEN }}
+  DH_TOKEN: ${{ secrets.DH_TOKEN }}
+  DH_USERNAME: ${{ secrets.DH_USERNAME }}
 jobs:
   deploy-actions:
     name: deploy
@@ -25,10 +27,12 @@ jobs:
             ^CF_.*$
             ^TF_.*$
             ^DO_.*$
+            ^DH_.*$
           repositories: |
             ^.*BlakeRandall\/secrets.*$
             ^.*BlakeRandall\/tf-.*$
             ^.*BlakeRandall\/dns.*$
+            ^.*BlakeRandall\/linuxserver-docker-mod-universal.*$
           github_token: ${{ secrets.GH_TOKEN }}
   deploy-codespaces:
     name: deploy
@@ -43,8 +47,10 @@ jobs:
             ^CF_.*$
             ^TF_.*$
             ^DO_.*$
+            ^DH_.*$
           repositories: |
             ^.*BlakeRandall\/secrets.*$
             ^.*BlakeRandall\/tf-.*$
             ^.*BlakeRandall\/dns.*$
+            ^.*BlakeRandall\/linuxserver-docker-mod-universal.*$
           github_token: ${{ secrets.GH_TOKEN }}
