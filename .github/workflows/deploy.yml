@@ -33,6 +33,7 @@ jobs:
             ^.*BlakeRandall\/tf-.*$
             ^.*BlakeRandall\/dns.*$
             ^.*BlakeRandall\/linuxserver-docker-mod-universal.*$
+            ^.*BlakeRandall\/proxy.*$
           github_token: ${{ secrets.GH_TOKEN }}
   deploy-codespaces:
     name: deploy
@@ -53,4 +54,5 @@ jobs:
             ^.*BlakeRandall\/tf-.*$
             ^.*BlakeRandall\/dns.*$
             ^.*BlakeRandall\/linuxserver-docker-mod-universal.*$
+            ^.*BlakeRandall\/proxy.*$
           github_token: ${{ secrets.GH_TOKEN }}
