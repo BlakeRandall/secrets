@@ -30,6 +30,7 @@ jobs:
             ^DH_.*$
           repositories: |
             ^.*BlakeRandall\/secrets.*$
+            ^.*BlakeRandall\/workspace.*$
             ^.*BlakeRandall\/tf-.*$
             ^.*BlakeRandall\/dns.*$
             ^.*BlakeRandall\/linuxserver-docker-mod-universal.*$
@@ -51,6 +52,7 @@ jobs:
             ^DH_.*$
           repositories: |
             ^.*BlakeRandall\/secrets.*$
+            ^.*BlakeRandall\/workspace.*$
             ^.*BlakeRandall\/tf-.*$
             ^.*BlakeRandall\/dns.*$
             ^.*BlakeRandall\/linuxserver-docker-mod-universal.*$
