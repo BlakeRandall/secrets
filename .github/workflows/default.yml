@@ -1,4 +1,4 @@
-name: Deploy
+name: default
 on:
   workflow_dispatch:
   push:
@@ -14,8 +14,8 @@ env:
   DH_TOKEN: ${{ secrets.DH_TOKEN }}
   DH_USERNAME: ${{ secrets.DH_USERNAME }}
 jobs:
-  deploy-actions:
-    name: deploy
+  default-actions:
+    name: default
     runs-on: ubuntu-latest
     steps:
       - uses: google/secrets-sync-action@v1.10.0
@@ -31,13 +31,11 @@ jobs:
           repositories: |
             ^.*BlakeRandall\/secrets.*$
             ^.*BlakeRandall\/workspace.*$
-            ^.*BlakeRandall\/tf-.*$
+            ^.*BlakeRandall\/project-.*$
             ^.*BlakeRandall\/dns.*$
-            ^.*BlakeRandall\/linuxserver-docker-mod-universal.*$
-            ^.*BlakeRandall\/proxy.*$
           github_token: ${{ secrets.GH_TOKEN }}
-  deploy-codespaces:
-    name: deploy
+  default-codespaces:
+    name: default
     runs-on: ubuntu-latest
     steps:
       - uses: google/secrets-sync-action@v1.10.0
@@ -53,8 +51,6 @@ jobs:
           repositories: |
             ^.*BlakeRandall\/secrets.*$
             ^.*BlakeRandall\/workspace.*$
-            ^.*BlakeRandall\/tf-.*$
+            ^.*BlakeRandall\/project-.*$
             ^.*BlakeRandall\/dns.*$
-            ^.*BlakeRandall\/linuxserver-docker-mod-universal.*$
-            ^.*BlakeRandall\/proxy.*$
           github_token: ${{ secrets.GH_TOKEN }}
